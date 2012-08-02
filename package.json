@@ -1,10 +1,10 @@
 {
-    "name": "",
+    "name": "nox",
     "version": "v0.0.1",
-    "description": "",
-    "keywords": [],
-    "repository": { "type": "git", "url": "" },
-    "author": "",
+    "description": "Documentation generator for Node.js. Compatible with JSDoc",
+    "keywords": ["documentation", "generator"],
+    "repository": { "type": "git", "url": "git@github.com:shiawuen/nox.git" },
+    "author": "Wong Liang Zan <zan@liangzan.net> (http://liangzan.net)",
     "engines": {
 	"node" : "~0.8",
 	"npm": "1"

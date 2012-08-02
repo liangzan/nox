@@ -1,3 +1,15 @@
-# Node.js Package Boilerplate
+# Nox
 
-This is a set of common files and directories that I always use for starting a Node.js project. Just git clone and change the files as needed.
+Nox is a Node.js documentation generator. It aims to be compatible with [JSDoc markup](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference).
+
+## Installation
+
+``` sh
+npm install nox
+```
+
+## Usage
+
+``` sh
+nox doc
+```
