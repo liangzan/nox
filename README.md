@@ -1,6 +1,8 @@
 # Nox
 
-Nox is a Node.js documentation generator. It is heavily influenced by [dox](https://github.com/visionmedia/dox), hence the name. It aims to be compatible with [JSDoc markup](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference). We aim to support [Coffeescript](http://coffeescript.org) without the need to compile to Javascript in __v0.2__. For now, you should be able to achieve the same as long as the compiled Jacvascript is compatible with the format. Do check back in the future.
+Nox is a documentation generator for Node.js projects. It is heavily influenced by [dox](https://github.com/visionmedia/dox), hence the name. It aims to be compatible with [JSDoc markup](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference). Currently Nox implements a subset of the tags available in JSDoc. You can find out from the [Nox Syntax Reference](https://github.com/shiawuen/nox/blob/master/Nox-Syntax-Reference.md).
+
+We aim to support [Coffeescript](http://coffeescript.org) without the need to compile to Javascript in __v0.2__. For now, as long as the compiled Javascript is compatible with the format, it should work.
 
 ## Installation
 
@@ -44,6 +46,7 @@ Options should be separated by __new lines__. Here is an example.
 
 ``` sh
 -o doc
+--output-dir doc
 ```
 
 ### Files
@@ -67,12 +70,6 @@ By a regular expression. Nox will include all files that fits into the expressio
 ``` sh
 nox lib/foo/*.js
 ```
-
-## Format
-
-Nox aims to be compatible with [JSDoc](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference) format. You can find out from the [Nox Syntax Reference](https://github.com/shiawuen/nox/blob/master/Nox-Syntax-Reference.md).
-
-Credit to [Google Javascript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml) for providing much of the JSDoc documentation.
 
 ## License
 
