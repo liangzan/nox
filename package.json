@@ -9,6 +9,13 @@
 	"node" : "~0.8",
 	"npm": "1"
     },
-    "dependencies": {},
-    "devDependencies": {}
+    "dependencies": {
+	"optimist": "~0.3.4",
+	"winston": "~0.6.2",
+	"colors": "~0.6.0-1"
+    },
+    "devDependencies": {
+	"mocha": "~1.3.2",
+	"should": "~1.1.0"
+    }
 }
