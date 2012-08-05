@@ -1,4 +1,4 @@
-# Nox Tag Reference
+# Nox Syntax Reference
 
 While Nox aims to be compatible with JSDoc, we may introduce new tags. Use this as the canonical reference. Much of this document is taken from the excellent [Google Javascript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml). Note that Nox does not implement the full set of tags. Only those documented here.
 
