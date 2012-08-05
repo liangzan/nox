@@ -70,7 +70,7 @@ nox lib/foo/*.js
 
 ## Format
 
-Nox aims to be compatible with [JSDoc](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference) format. You can find out from the [[Nox Syntax Reference]].
+Nox aims to be compatible with [JSDoc](http://code.google.com/p/jsdoc-toolkit/wiki/TagReference) format. You can find out from the [Nox Syntax Reference](https://github.com/shiawuen/nox/blob/master/Nox-Syntax-Reference.md).
 
 Credit to [Google Javascript style guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml) for providing much of the JSDoc documentation.
 

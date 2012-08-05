@@ -33,6 +33,7 @@ function bar(foo) {
 
 It is acceptable to line up the description.
 
+``` javascript
 /**
  * This is NOT the preferred indentation method.
  * @param {string} foo This is a param with a description too long to fit in
@@ -43,6 +44,7 @@ It is acceptable to line up the description.
 function bar(foo) {
   return 5;
 };
+```
 
 ## Top/File-Level Comments
 
@@ -110,8 +112,6 @@ project.MyClass.prototype.someProperty = 4;
 
 Documents the author of the file.
 
-#### Example
-
 ``` javascript
 /**
  * @fileoverview Utilities for handling textareas.
@@ -119,16 +119,14 @@ Documents the author of the file.
  */
 ```
 
-### @const
+### @constant
 
 Marks a variable as a read only constant.
-
-#### Example
 
 ``` javascript
 /**
  * My namespace's favorite kind of beer.
- * @const
+ * @constant
  * @type {string}
  */
 mynamespace.MY_BEER = 'stout';
@@ -137,8 +135,6 @@ mynamespace.MY_BEER = 'stout';
 ### @constructor
 
 Indicates the constructor.
-
-#### Example
 
 ``` javascript
 /**
@@ -149,11 +145,10 @@ function GM_Rect() {
   ...
 }
 ```
+
 ### @deprecated
 
 Used to indicate that a function should not be used any more. Always provide instructions on what should be used instead.
-
-#### Example
 
 ``` javascript
 /**
@@ -172,8 +167,6 @@ BN_EditUtil.isTopEditableField = function(node) {
 
 An enumerated type.
 
-#### Example
-
 ``` javascript
 /**
  * Enum for tri-state values.
@@ -190,8 +183,6 @@ project.TriState = {
 
 Indicates that the class is inherited from another. Usually used at the constructor.
 
-#### Example
-
 ``` javascript
 /**
  * Immutable empty node list.
@@ -206,8 +197,6 @@ goog.ds.EmptyNodeList = function() {
 ### @override
 
 Indicates that the method or property has overridden its parent class.
-
-#### Example
 
 ``` javascript
 /**
@@ -225,8 +214,6 @@ Used with method, function and constructor calls to document the arguments of a 
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the parameter.
 
-#### Example
-
 ``` javascript
 /**
  * Queries a Baz for items.
@@ -237,4 +224,128 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 goog.Baz.prototype.query = function(groupNum, term) {
   // ...
 };
+```
+
+### @public
+
+Indicates that the member is public
+
+``` javascript
+/**
+ * Handlers that are listening to this logger.
+ * @type Array.<Function>
+ * @public
+ */
+this.handlers_ = [];
+```
+
+### @private
+
+Indicates that the member is private
+
+``` javascript
+/**
+ * Handlers that are listening to this logger.
+ * @type Array.<Function>
+ * @private
+ */
+this.handlers_ = [];
+```
+
+### @return
+
+Documents the return type. If there is no return value, do not use it. Type name should be enclosed in curly braces.
+
+``` javascript
+/**
+ * @return {string} The hex ID of the last item.
+ */
+goog.Baz.prototype.getLastId = function() {
+  // ...
+  return id;
+};
+```
+
+### @see
+
+Reference to another function or class
+
+``` javascript
+/**
+ * Adds a single item, recklessly.
+ * @see #addSafely
+ * @see goog.Collect
+ * @see goog.RecklessAdder#add
+ */
+```
+
+### @type
+
+Documents the type that the member belongs to
+
+``` javascript
+/**
+ * @type Color
+ */
+function getColor() {
+}
+```
+
+### @version
+
+Documents what version the member belongs to
+
+``` javascript
+/**
+ * @class
+ * @version 2001 beta release
+ */
+function Hal() {
+    this.sing = function(song) {
+    }
+}
+```
+
+### @namespace
+
+Documents what namespace this member belongs to
+
+``` javascript
+/**
+ *  @namespace Extensions
+ */
+var function pluginManager {
+}
+
+exports.Extensions = pluginManager;
+```
+
+### @memberOf
+
+Documents the parent of the member
+
+``` javascript
+var Tools = {};
+
+/** @namespace */
+Tools.Dom = {};
+
+/** @memberOf Tools.Dom */
+var hiliteSearchTerm = function(term) {
+}
+
+Tools.Dom.highlightSearchTerm = hiliteSearchTerm;
+```
+
+### @throws
+
+Documents the exceptions the function may throw
+
+``` javascript
+/**
+ * @throws {OutOfMemeory} If the file is too big.
+ */
+function processFile(path) {
+
+}
 ```
