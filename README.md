@@ -28,7 +28,7 @@ nox [OPTION] [FILES]
 
 #### -o, --output-dir
 
-Specifies the directory where the documentation will be saved at. Defaults to __doc__.
+Specifies the directory where the documentation will be saved at. Defaults to __doc__. The directory should be relative to the working directory.
 
 #### -h, --help
 
@@ -69,6 +69,12 @@ By a regular expression. Nox will include all files that fits into the expressio
 
 ``` sh
 nox lib/foo/*.js
+```
+
+Multiple expressions are separated by commas. Below is an example that searches for files in __lib__ and __src__ directory.
+
+``` sh
+nox lib,src
 ```
 
 ## License
