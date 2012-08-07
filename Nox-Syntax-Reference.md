@@ -21,9 +21,9 @@ If you have to line break a block tag, you should treat this as breaking a code 
 ``` javascript
 /**
  * Illustrates line wrapping for long param/return descriptions.
- * @param {string} foo - This is a param with a description too long to fit in
+ * @param {String} foo - This is a param with a description too long to fit in
  *     one line. Description could start with a name followed by a dash.
- * @return {number} This returns something that has a description too long to
+ * @return {Number} This returns something that has a description too long to
  *     fit in one line.
  */
 function bar(foo) {
@@ -36,9 +36,9 @@ It is acceptable to line up the description.
 ``` javascript
 /**
  * This is NOT the preferred indentation method.
- * @param {string} foo - This is a param with a description too long to fit in
+ * @param {String} foo - This is a param with a description too long to fit in
  *                     one line.
- * @return {number} This returns something that has a description too long to
+ * @return {Number} This returns something that has a description too long to
  *                  fit in one line.
  */
 function bar(foo) {
@@ -68,7 +68,7 @@ Classes must be documented with a description, and appropriate type tags.
 /**
  * Class making something fun and easy.
  *
- * @param {string} arg1 - An argument that makes this more interesting.
+ * @param {String} arg1 - An argument that makes this more interesting.
  * @param {Array.<number>} arg2 - List of numbers to be processed.
  * @constructor
  * @extends {goog.Disposable}
@@ -89,7 +89,7 @@ A description must be provided along with parameters. Method descriptions should
  *
  * @param {project.MyClass} obj - Instance of MyClass which leads to a long
  *     comment that needs to be wrapped to two lines.
- * @return {boolean} Whether something occured.
+ * @return {Boolean} Whether something occured.
  */
 function PR_someMethod(obj) {
   // ...
@@ -103,7 +103,7 @@ For simple getters that take no parameters and have no side effects, the descrip
 ``` javascript
 /**
  * Maximum number of things per pane.
- * @type {number}
+ * @type {Number}
  */
 project.MyClass.prototype.someProperty = 4;
 ```
@@ -128,7 +128,7 @@ Marks a variable as a read only constant.
 /**
  * My namespace's favorite kind of beer.
  * @constant
- * @type {string}
+ * @type {String}
  */
 mynamespace.MY_BEER = 'stout';
 ```
@@ -155,7 +155,7 @@ Used to indicate that a function should not be used any more. Always provide ins
 /**
  * Determines whether a node is a field.
  *
- * @return {boolean} True if the contents of
+ * @return {Boolean} True if the contents of
  *     the element are editable, but the element
  *     itself is not.
  * @deprecated Use isField().
@@ -173,7 +173,7 @@ An enumerated type.
 /**
  * Enum for tri-state values.
  *
- * @enum {number}
+ * @enum {Number}
  */
 project.TriState = {
   TRUE: 1,
@@ -204,7 +204,7 @@ Indicates that the method or property has overridden its parent class.
 
 ``` javascript
 /**
- * @return {string} Human-readable representation of project.SubClass.
+ * @return {String} Human-readable representation of project.SubClass.
  * @override
  */
 project.SubClass.prototype.toString() {
@@ -222,8 +222,8 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 /**
  * Queries a Baz for items.
  *
- * @param {number} groupNum - Subgroup id to query.
- * @param {string|number|null} term - An itemName,
+ * @param {Number} groupNum - Subgroup id to query.
+ * @param {String|Number|Null} term - An itemName,
  *     or itemId, or null to search everything.
  */
 goog.Baz.prototype.query = function(groupNum, term) {
@@ -265,7 +265,7 @@ Documents the return type. If there is no return value, do not use it. Type name
 
 ``` javascript
 /**
- * @return {string} The hex ID of the last item.
+ * @return {String} The hex ID of the last item.
  */
 goog.Baz.prototype.getLastId = function() {
   // ...
@@ -285,6 +285,7 @@ function bar(callback) {
   ...
   return callback(foo);
 }
+```
 
 ### @see
 
