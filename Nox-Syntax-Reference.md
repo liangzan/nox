@@ -1,13 +1,13 @@
 # Nox Syntax Reference
 
-While Nox aims to be compatible with JSDoc, we may introduce new tags. Use this as the canonical reference. Much of this document is taken from the excellent [Google Javascript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml). Note that Nox does not implement the full set of tags. Only those documented here.
+While Nox aims to be compatible with JSDoc, we may introduce new tags. Use this as the canonical reference. Much of this document is taken from the excellent [Google Javascript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml). Nox does not implement the full set of tags. There is a slight difference with the styling as well. We are much influenced by [tomdoc](http://tomdoc.org).
 
 ## Comment syntax
 
 ``` javascript
 /**
  * JSDoc always begins with a slash and 2 asterisks.
- * Inline tags should be enclosed in braces like {@code this}.
+ * There is no provision for inline tags.
  * @block tags should always start on their own line
  */
 function foo() {
@@ -21,8 +21,8 @@ If you have to line break a block tag, you should treat this as breaking a code 
 ``` javascript
 /**
  * Illustrates line wrapping for long param/return descriptions.
- * @param {string} foo This is a param with a description too long to fit in
- *     one line.
+ * @param {string} foo - This is a param with a description too long to fit in
+ *     one line. Description could start with a name followed by a dash.
  * @return {number} This returns something that has a description too long to
  *     fit in one line.
  */
@@ -36,7 +36,7 @@ It is acceptable to line up the description.
 ``` javascript
 /**
  * This is NOT the preferred indentation method.
- * @param {string} foo This is a param with a description too long to fit in
+ * @param {string} foo - This is a param with a description too long to fit in
  *                     one line.
  * @return {number} This returns something that has a description too long to
  *                  fit in one line.
@@ -51,12 +51,12 @@ function bar(foo) {
 The top level comment is designed to orient readers unfamiliar with the code to what is in this file. It should provide a description of the file's contents, its author(s), and any dependencies or compatibility information. As an example:
 
 ``` javascript
-// Copyright 2009 Google Inc. All Rights Reserved.
-
 /**
- * @fileoverview Description of file, its uses and information
+ * Description of file, its uses and information
  * about its dependencies.
+ *
  * @author user@google.com (Firstname Lastname)
+ * Copyright 2009 Google Inc. All Rights Reserved.
  */
 ```
 
@@ -67,8 +67,9 @@ Classes must be documented with a description, and appropriate type tags.
 ``` javascript
 /**
  * Class making something fun and easy.
- * @param {string} arg1 An argument that makes this more interesting.
- * @param {Array.<number>} arg2 List of numbers to be processed.
+ *
+ * @param {string} arg1 - An argument that makes this more interesting.
+ * @param {Array.<number>} arg2 - List of numbers to be processed.
  * @constructor
  * @extends {goog.Disposable}
  */
@@ -85,7 +86,8 @@ A description must be provided along with parameters. Method descriptions should
 ``` javascript
 /**
  * Operates on an instance of MyClass and returns something.
- * @param {project.MyClass} obj Instance of MyClass which leads to a long
+ *
+ * @param {project.MyClass} obj - Instance of MyClass which leads to a long
  *     comment that needs to be wrapped to two lines.
  * @return {boolean} Whether something occured.
  */
@@ -114,7 +116,6 @@ Documents the author of the file.
 
 ``` javascript
 /**
- * @fileoverview Utilities for handling textareas.
  * @author kuth@google.com (Uthur Pendragon)
  */
 ```
@@ -153,6 +154,7 @@ Used to indicate that a function should not be used any more. Always provide ins
 ``` javascript
 /**
  * Determines whether a node is a field.
+ *
  * @return {boolean} True if the contents of
  *     the element are editable, but the element
  *     itself is not.
@@ -170,6 +172,7 @@ An enumerated type.
 ``` javascript
 /**
  * Enum for tri-state values.
+ *
  * @enum {number}
  */
 project.TriState = {
@@ -186,6 +189,7 @@ Indicates that the class is inherited from another. Usually used at the construc
 ``` javascript
 /**
  * Immutable empty node list.
+ *
  * @constructor
  * @extends goog.ds.BasicNodeList
  */
@@ -217,8 +221,9 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 ``` javascript
 /**
  * Queries a Baz for items.
- * @param {number} groupNum Subgroup id to query.
- * @param {string|number|null} term An itemName,
+ *
+ * @param {number} groupNum - Subgroup id to query.
+ * @param {string|number|null} term - An itemName,
  *     or itemId, or null to search everything.
  */
 goog.Baz.prototype.query = function(groupNum, term) {
@@ -233,6 +238,7 @@ Indicates that the member is public
 ``` javascript
 /**
  * Handlers that are listening to this logger.
+ *
  * @type Array.<Function>
  * @public
  */
@@ -246,6 +252,7 @@ Indicates that the member is private
 ``` javascript
 /**
  * Handlers that are listening to this logger.
+ *
  * @type Array.<Function>
  * @private
  */
@@ -266,6 +273,19 @@ goog.Baz.prototype.getLastId = function() {
 };
 ```
 
+### @callbackParam
+
+Documents the parameters of the callback function. It should be order of the parameters returned. There should be a name followed by the description of the parameter.
+
+``` javascript
+/**
+ * @callbackParam {String} foo - The name of the user
+ */
+function bar(callback) {
+  ...
+  return callback(foo);
+}
+
 ### @see
 
 Reference to another function or class
@@ -273,6 +293,7 @@ Reference to another function or class
 ``` javascript
 /**
  * Adds a single item, recklessly.
+ *
  * @see #addSafely
  * @see goog.Collect
  * @see goog.RecklessAdder#add
@@ -348,4 +369,16 @@ Documents the exceptions the function may throw
 function processFile(path) {
 
 }
+```
+
+### @example
+
+Allows you to provide an example of the usage. Code should be provided below the tag and indented with 2 spaces.
+
+``` javascript
+/**
+ * @example
+ *   var bleeper = makeBleep(3);
+ *   bleeper.flop();
+ */
 ```
