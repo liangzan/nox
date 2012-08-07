@@ -42,11 +42,13 @@ Show the version of the package
 
 You can place a __.nox.opts__ file on your project root. Nox will load the options specified from the file. However options stated on the command line will always take precendence.
 
-Options should be separated by __new lines__. Here is an example.
+The format of the options should be in JSON format. There is no point inventing _yet another custom serialization format_ since JSON is widely accepted. Here is an example. If the option do not expect an argument, use __true__ as the argument.
 
-``` sh
--o doc
---output-dir doc
+``` javascript
+{
+ "o": "doc",
+ "help": true
+}
 ```
 
 ### Files
