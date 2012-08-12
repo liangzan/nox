@@ -72,4 +72,14 @@ describe('utility', function() {
       });
     });
   });
+
+  describe('filterJSFiles', function() {
+    it('should filter .js files', function() {
+      var filePaths = ['/path/to/foo.js', '/path/to/doo.JS', '/path/to/loo.rb',
+		       '/path/to/woo'];
+      var filteredFilePaths = utility.filterJSFiles(filePaths);
+      filteredFilePaths.should.include('/path/to/foo.js');
+      filteredFilePaths.should.include('/path/to/doo.JS');
+    });
+  });
 });
