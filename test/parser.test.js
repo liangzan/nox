@@ -49,8 +49,8 @@ describe('parser', function() {
 		{
 		  "tag": "callbackParam",
 		  "type": "Object",
-		  "name": "err",
-		  "description": ""
+		  "name": "",
+		  "description": "err"
 		},
 		{
 		  "tag": "callbackParam",
@@ -77,8 +77,8 @@ describe('parser', function() {
 		{
 		  "tag": "return",
 		  "type": "String",
-		  "name": "This is a return tag description",
-		  "description": ""
+		  "name": "",
+		  "description": "This is a return tag description"
 		}
 	      ]
 	    }
